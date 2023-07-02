@@ -8,6 +8,13 @@ import GameNotification from './components/GameNotification.vue'
 import { ref } from 'vue'
 
 const word = ref('василий')
+
+window.addEventListener('keydown', ({ key }) => {
+  // получаем символ кириллицы
+  if(/[а-яА-ЯёЁ]/.test(key)) {
+    
+  }
+})
 </script>
 
 <template>
@@ -15,7 +22,7 @@ const word = ref('василий')
   <div class="game-container">
     <GameFigure />
     <GameWrongLetters />
-    <GameWord />
+    <GameWord :word="word" />
   </div>
 
   <!-- Container for final message -->
